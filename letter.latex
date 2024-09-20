@@ -28,6 +28,8 @@ $for(classoption)$
   $classoption$$sep$,
 $endfor$
 ]{scrlttr2}
+\usepackage[ngerman,num]{isodate}
+\monthyearsepgerman{\,}{\,}
 $if(beamer)$
 $if(background-image)$
 \usebackgroundtemplate{%
@@ -438,7 +440,11 @@ $endif$
 \subtitle{$subtitle$}
 $endif$
 \author{$for(author)$$author$$sep$ \and $endfor$}
+$if(date)$
 \date{$date$}
+$else$
+\date{\today}
+$endif$
 $if(beamer)$
 $if(institute)$
 \institute{$for(institute)$$institute$$sep$ \and $endfor$}
